@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festa Junina - Ingressos Online</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logos">
+                    <div class="logo-placeholder">
+                        <span>Logo do Evento</span>
+                    </div>
+                    <div class="logo-placeholder">
+                        <span>Logo da Escola</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <h1 class="site-title">Festa Junina - Ingressos Online</h1>
+                    <button id="adminToggle" class="btn btn-outline">Admin</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Event Information -->
+            <section class="event-info">
+                <div class="card ticket-card">
+                    <div class="card-header text-center">
+                        <h2 class="event-title">Festa Junina da Escola</h2>
+                        <p class="event-subtitle">Venha se divertir na nossa tradicional festa junina!</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <div class="detail-icon calendar-icon"></div>
+                                <div class="detail-info">
+                                    <h4>Data</h4>
+                                    <p>15 de Julho de 2024</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon clock-icon"></div>
+                                <div class="detail-info">
+                                    <h4>Horário</h4>
+                                    <p>19:00 às 23:00</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon location-icon"></div>
+                                <div class="detail-info">
+                                    <h4>Local</h4>
+                                    <p>Quadra da Escola Municipal</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon music-icon"></div>
+                                <div class="detail-info">
+                                    <h4>Atrações</h4>
+                                    <p>5 atividades</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="attractions">
+                            <h3 class="attractions-title">
+                                <span class="music-icon-small"></span>
+                                Atrações da Festa
+                            </h3>
+                            <div class="attractions-list">
+                                <span class="badge">Quadrilha</span>
+                                <span class="badge">Forró ao vivo</span>
+                                <span class="badge">Comidas típicas</span>
+                                <span class="badge">Pescaria</span>
+                                <span class="badge">Correio elegante</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tickets Section -->
+            <section class="tickets-section">
+                <h2 class="section-title">Escolha seu Ingresso</h2>
+                <div class="tickets-grid">
+                    <div class="card ticket-card">
+                        <div class="card-header">
+                            <div class="ticket-header">
+                                <h3>Ingresso Individual</h3>
+                                <span class="availability-badge">150 disponíveis</span>
+                            </div>
+                            <p class="ticket-description">Entrada individual para a festa</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="ticket-footer">
+                                <span class="ticket-price">R$ 15,00</span>
+                                <div class="admin-info" style="display: none;">
+                                    <span class="admin-stats">150/200 (25% vendidos)</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-full purchase-btn" data-ticket="individual">
+                                <span class="cart-icon"></span>
+                                Comprar Ingresso
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card ticket-card">
+                        <div class="card-header">
+                            <div class="ticket-header">
+                                <h3>Combo Família</h3>
+                                <span class="availability-badge">25 disponíveis</span>
+                            </div>
+                            <p class="ticket-description">2 adultos + 2 crianças</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="ticket-footer">
+                                <span class="ticket-price">R$ 40,00</span>
+                                <div class="admin-info" style="display: none;">
+                                    <span class="admin-stats">25/50 (50% vendidos)</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-full purchase-btn" data-ticket="combo">
+                                <span class="cart-icon"></span>
+                                Comprar Ingresso
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Admin Section -->
+            <section class="admin-section" id="adminSection" style="display: none;">
+                <div class="admin-header">
+                    <h2 class="admin-title">Área Administrativa</h2>
+                    <span class="admin-badge">ADMIN</span>
+                </div>
+                
+                <!-- Sales Counter -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <span class="users-icon"></span>
+                            Contador de Vendas
+                        </h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="sales-grid">
+                            <div class="sales-item">
+                                <div class="sales-header">
+                                    <span class="sales-name">Ingresso Individual</span>
+                                    <span class="sales-count">50/200</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 25%"></div>
+                                </div>
+                                <div class="sales-footer">
+                                    <span class="sales-percentage">25% vendidos</span>
+                                    <span class="sales-remaining">150 restantes</span>
+                                </div>
+                            </div>
+                            <div class="sales-item">
+                                <div class="sales-header">
+                                    <span class="sales-name">Combo Família</span>
+                                    <span class="sales-count">25/50</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 50%"></div>
+                                </div>
+                                <div class="sales-footer">
+                                    <span class="sales-percentage">50% vendidos</span>
+                                    <span class="sales-remaining">25 restantes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pending Payments -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <span class="upload-icon"></span>
+                            Pagamentos Pendentes (<span id="pendingCount">1</span>)
+                        </h3>
+                    </div>
+                    <div class="card-content">
+                        <div id="pendingPayments">
+                            <div class="payment-item">
+                                <div class="payment-info">
+                                    <h4>João Silva</h4>
+                                    <p>joao@email.com</p>
+                                    <p>Ingresso Individual - R$ 15,00</p>
+                                    <p class="payment-file">
+                                        <span class="file-icon"></span>
+                                        comprovante_joao.pdf - 10/06/2024
+                                    </p>
+                                </div>
+                                <div class="payment-actions">
+                                    <button class="btn btn-outline btn-sm view-receipt-btn">Ver Comprovante</button>
+                                    <button class="btn btn-success btn-sm confirm-payment-btn">
+                                        <span class="check-icon"></span>
+                                        Confirmar
+                                    </button>
+                                    <button class="btn btn-danger btn-sm reject-payment-btn">
+                                        <span class="x-icon"></span>
+                                        Rejeitar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="noPendingPayments" style="display: none;">
+                            <p class="no-payments">Nenhum pagamento pendente</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Purchase Modal -->
+    <div id="purchaseModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Comprar Ingresso</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- QR Code Section -->
+                <div class="qr-section">
+                    <p class="qr-title">QR Code para Pagamento PIX</p>
+                    <div class="qr-code">
+                        <div class="qr-placeholder">QR Code aqui</div>
+                    </div>
+                    <p class="qr-price" id="modalPrice">R$ 15,00</p>
+                    <p class="qr-info" id="modalQRInfo">PIX: festa.junina@escola.com.br</p>
+                </div>
+
+                <!-- Buyer Information -->
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="buyerName">Nome Completo *</label>
+                        <input type="text" id="buyerName" placeholder="Digite seu nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="buyerEmail">E-mail *</label>
+                        <input type="email" id="buyerEmail" placeholder="Digite seu e-mail" required>
+                    </div>
+                </div>
+
+                <!-- File Upload -->
+                <div class="form-section">
+                    <label>Anexar Comprovante de Pagamento *</label>
+                    <div class="file-upload" id="fileUpload">
+                        <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.pdf" style="display: none;">
+                        <div class="file-upload-content" id="fileUploadContent">
+                            <span class="upload-icon-large"></span>
+                            <p><strong>Clique para anexar o comprovante</strong></p>
+                            <p>JPG, PNG ou PDF (máx. 5MB)</p>
+                        </div>
+                        <div class="file-selected" id="fileSelected" style="display: none;">
+                            <span class="check-icon-large"></span>
+                            <div class="file-info">
+                                <p id="fileName"></p>
+                                <p id="fileSize"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instructions -->
+                <div class="instructions">
+                    <div class="instructions-header">
+                        <span class="info-icon"></span>
+                        <strong>Instruções:</strong>
+                    </div>
+                    <ol>
+                        <li>Faça o pagamento via PIX usando o QR Code acima</li>
+                        <li>Tire uma foto ou print do comprovante</li>
+                        <li>Anexe o comprovante e preencha seus dados</li>
+                        <li>Aguarde a confirmação do pagamento</li>
+                    </ol>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="modal-actions">
+                    <button class="btn btn-outline" id="cancelPurchase">Cancelar</button>
+                    <button class="btn btn-success" id="submitPurchase" disabled>
+                        <span class="upload-icon-small"></span>
+                        Enviar Comprovante
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Escola Municipal - Festa Junina</p>
+            <p>Dúvidas? Entre em contato conosco pelo telefone (11) 99999-9999</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
+
